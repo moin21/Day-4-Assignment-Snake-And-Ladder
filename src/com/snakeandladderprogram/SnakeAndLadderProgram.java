@@ -9,11 +9,14 @@ public class SnakeAndLadderProgram {
 		System.out.println("Welcome to Snake and Ladder Game!!");
 		currentPosition = START_POSITION;
 		diceRoll();
+
 	}
 
 	public static void diceRoll() {
+		int noOfRolls = 0;
 		while (currentPosition < FINAL_POSITION) {
 			int diceResult = (int) (Math.floor(Math.random() * 10) % 6 + 1);
+			noOfRolls++;
 			int playCheck = (int) (Math.floor(Math.random() * 10) % 3);
 			if (playCheck == 0) {
 				currentPosition += 0;
@@ -30,5 +33,6 @@ public class SnakeAndLadderProgram {
 			}
 			System.out.println(currentPosition);
 		}
+		System.out.println("No. of total Dice Rolls are: "+noOfRolls);
 	}
 }
