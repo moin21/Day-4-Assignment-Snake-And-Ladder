@@ -8,12 +8,24 @@ public class SnakeAndLadderProgram {
 	public static void main(String[] args) {
 		System.out.println("Welcome to Snake and Ladder Game!!");
 		currentPosition = START_POSITION;
-		System.out.println(diceRoll());
+		diceRoll();
 	}
 
-	public static int diceRoll() {
+	public static void diceRoll() {
 		int diceResult = (int) (Math.floor(Math.random() * 10) % 6 + 1);
-		return diceResult;
-
+		int playCheck = (int) (Math.floor(Math.random() * 10) % 3);
+		if(playCheck == 0) {
+			currentPosition += 0;
+		}
+		else if(playCheck == 1) {
+			currentPosition += diceResult;
+		}
+		else {
+			currentPosition -= diceResult;
+			if(currentPosition<0) {
+				currentPosition = START_POSITION;
+			}
+		}
+		System.out.println(currentPosition);
 	}
 }
