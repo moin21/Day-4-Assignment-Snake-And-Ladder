@@ -12,6 +12,7 @@ public class SnakeAndLadderProgram {
 	}
 
 	public static void diceRoll() {
+		while(currentPosition < FINAL_POSITION) {
 		int diceResult = (int) (Math.floor(Math.random() * 10) % 6 + 1);
 		int playCheck = (int) (Math.floor(Math.random() * 10) % 3);
 		if(playCheck == 0) {
@@ -28,4 +29,5 @@ public class SnakeAndLadderProgram {
 		}
 		System.out.println(currentPosition);
 	}
+}
 }
